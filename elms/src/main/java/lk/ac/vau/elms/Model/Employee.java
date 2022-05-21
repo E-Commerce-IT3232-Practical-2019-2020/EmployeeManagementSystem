@@ -1,7 +1,12 @@
 package lk.ac.vau.elms.Model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Employee {
@@ -14,4 +19,12 @@ public class Employee {
 	private String email;
 	private String password;
 	private String address;
+	
+	@ManyToOne
+	@JoinColumn(name="dept_id",referencedColumnName="dept_id",nullable=false)
+	private Department dept;
+	
+	@ManyToMany(mappedBy="emp")
+	private List <ApplyLeave> app_leaves;
+	
 }
