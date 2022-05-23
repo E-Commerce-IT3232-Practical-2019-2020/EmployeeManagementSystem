@@ -14,7 +14,10 @@ public class Login {
 	private String username;
 	private String password;
 	
+	@OneToOne(mappedBy="logins")
+	private Admin admins;
 	
-	
+	@OneToOne(mappedBy="logins")
+	private Employee emp;
 	
 }

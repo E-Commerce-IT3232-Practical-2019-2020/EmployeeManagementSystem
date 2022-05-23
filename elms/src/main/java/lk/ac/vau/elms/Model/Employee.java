@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Employee {
@@ -26,5 +27,9 @@ public class Employee {
 	
 	@ManyToMany(mappedBy="emp")
 	private List <ApplyLeave> app_leaves;
+	
+	@OneToOne
+	@JoinColumn(name="login_id",referencedColumnName="login_id",nullable=false)
+	private Login logins;
 	
 }

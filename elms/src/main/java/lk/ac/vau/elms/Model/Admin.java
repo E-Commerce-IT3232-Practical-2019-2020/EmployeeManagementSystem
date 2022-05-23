@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -23,6 +24,10 @@ public class Admin {
 	
 	@OneToMany(mappedBy="admins")
 	private List <Permission> permissions;
+	
+	@OneToOne
+	@JoinColumn(name="login_id",referencedColumnName="login_id",nullable=false)
+	private Login logins;
 	
 	
 	
