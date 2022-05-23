@@ -13,7 +13,7 @@ public class ApplyLeave {
 	@Id
 	private String lid;
 	private String designation;
-	private int no_of_leave_applied;
+	private int no_of_dates_leave_applied;
 	private int leave_taken_in_current_yr;
 	private String data_of_first_appoinment;
 	private String date_of_commencing_leave;
