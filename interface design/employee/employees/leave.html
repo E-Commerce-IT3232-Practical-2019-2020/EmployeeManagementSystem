@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <title>Employee Leave Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets/css/metisMenu.css">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/default-css.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style> 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  background-color: DodgerBlue;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+  background-color: DodgerBlue;
+}
+
+
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+
+
+.select-items div:hover, .same-as-selected {
+  background-color: DodgerBlue;
+}
+
+.button {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+</style>
+</head>
+
+<body>
+   <div id="preloader">
+        <div class="loader"></div>
+    </div>
+   <div class="page-container">
+       <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="leave.html"><img src="../assets/images/icon/logo.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+
+                            <li class="active">
+                                <a href="leave.html" aria-expanded="true"><i class="ti-user"></i><span>Apply Leave
+                                    </span></a>
+                            </li>
+
+                            <li class="#">
+                                <a href="leave-history.html" aria-expanded="true"><i class="ti-agenda"></i><span>View My Leave History
+                                    </span></a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Apply For Leave Days</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="main-content-inner">
+                <div class="row">
+                    <div class="col-lg-6 col-ml-12">
+                        <div class="row">
+                           <div class="col-12 mt-5">
+                                <div class="card">
+                                <form name="addemp" method="POST">
+
+                                    <div class="card-body">
+                                        <h4 class="header-title">Employee Leave Form</h4>
+                                        <p class="text-muted font-14 mb-4">Please fill up the form below.</p>
+                                           
+
+                                        <div>
+                                          <form action="/action_page.php">
+                                            <label for="fname">Designation</label>
+                                            <input type="text" id="Designation" name="Designation">
+
+                                            <label for="lname">No.of days leave applied</label>
+                                            <input type="number" id="leave" name="leave">
+
+                                            <label for="lname">Leave taken in current year</label>
+                                            <input type="number" id="leavecount" name="leavecount">
+
+                                            <label for="lname">Date of first appoinment</label>
+                                            <input type="date" id="fdate" name="fdate">
+
+                                            <label for="lname">Date of commencing leave</label>
+                                            <input type="date" id="cdate" name="cdate">
+
+                                            <label for="lname">Date of resuming duties</label>
+                                            <input type="date" id="rdate" name="rdate">
+
+                                            <label for="fname">Reason for leave</label><br>
+                                            <div class="custom-select" style="width:200px;">
+                                              <select>
+                                                <option value="Casual_leave">Casual leave(Sick leave)</option>
+                                              <option value="Maternity Leave">Maternity Leave</option>
+                                              <option value="Family responsibility leave">Family responsibility leave</option>
+                                               
+                                              </select>
+                                            </div>
+                                                <br><br>
+                                            <label for="fname">Address when on leave</label>
+                                            <input type="text" id="adress" name="adress">                  
+                                          <input type="button" class="button" value="Submit">
+                                          </form>
+                                        </div>
+
+                                                                            </div>
+                                                                        </form>
+                                                                        </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offset-area">
+        <div class="offset-close"><i class="ti-close"></i></div>
+    </div>
+    <script src="../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <script src="../assets/js/jquery.slimscroll.min.js"></script>
+    <script src="../assets/js/jquery.slicknav.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>
