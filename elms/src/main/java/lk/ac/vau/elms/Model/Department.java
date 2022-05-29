@@ -9,11 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Department {
+public class Department extends SuperClass {
 	
-	@Id
-	private String dept_id;
-	private String name;
 	private String description;
 	
 	@ManyToOne

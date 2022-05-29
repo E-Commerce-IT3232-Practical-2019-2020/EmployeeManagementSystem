@@ -10,11 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Admin {
+public class Admin extends SuperClass {
 
-	@Id
-	private String admin_id;
-	private String Name;
 	private String UserName;
 	private String Password;
 	private int MobileNUm;
@@ -28,8 +25,5 @@ public class Admin {
 	@OneToOne
 	@JoinColumn(name="login_id",referencedColumnName="login_id",nullable=false)
 	private Login logins;
-	
-	
-	
 	
 }

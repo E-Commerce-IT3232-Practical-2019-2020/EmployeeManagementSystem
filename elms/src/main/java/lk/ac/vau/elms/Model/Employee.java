@@ -10,11 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Employee {
+public class Employee extends SuperClass {
 
-	@Id
-	private String emp_id;
-	private String name;
 	private String mobile_num;
 	private String role;
 	private String email;
