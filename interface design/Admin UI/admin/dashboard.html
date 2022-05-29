@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Title -->
+        <title>Admin | Dashboard </title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta charset="UTF-8">
+        <meta name="description" content="Responsive Admin Dashboard Template" />
+        <meta name="keywords" content="admin,dashboard" />
+        <meta name="author" content="Steelcoders" />
+        
+        <!-- Styles -->
+        <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"/>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+        <link href="../assets/plugins/metrojs/MetroJs.min.css" rel="stylesheet">
+        <link href="../assets/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet">
+
+        	
+        <!-- Theme Styles -->
+        <link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+        <main class="mn-inner">
+            <div class="middle-content">
+				<div class="row no-m-t no-m-b">
+                    <div class="col s12 m12 l4">
+                        <div class="card stats-card">
+                            <div class="card-content">
+                                <span class="card-title">Total Regd Employee</span>
+                                <span class="stats-counter">
+                                    <span class="counter"></span>
+								</span>
+                            </div>
+                            <div id="sparkline-bar"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="card stats-card">
+                            <div class="card-content">                          
+                                <span class="card-title">Listed Departments </span>                            
+                                <span class="stats-counter"><span class="counter"></span></span>
+                            </div>
+                            <div id="sparkline-line"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="card stats-card">
+                            <div class="card-content">
+                                <span class="card-title">Listed leave Type</span>
+                                <span class="stats-counter"><span class="counter"></span></span>                     
+                            </div>
+                            <div class="progress stats-card-progress">
+                                <div class="determinate" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="row no-m-t no-m-b">
+                    <div class="col s12 m12 l12">
+                        <div class="card invoices-card">
+                            <div class="card-content">                                
+                                <span class="card-title">Latest Leave Applications</span>
+								<table id="example" class="display responsive-table ">
+                                   <thead>
+										<tr>
+											<th>#</th>
+											<th width="120">Employee Code</th>
+											<th width="200">Employe Name</th>
+											<th width="200">Designation</th>
+											<th width="120">Leave Code</th>
+											<th width="180">Number of Days Leave Appied</th>
+											<th width="180">Leave Taken in Current Year</th>
+											<th width="180">Date of First Appointment</th>
+											<th width="180">Date of Commencing Leave</th>
+											<th width="180">Date of Resuming Duties</th>
+											<th width="180">Reason for Leave</th>
+											<th width="180">Posting Date</th>
+											<th>Status</th>
+											<th align="center">Action</th>
+										</tr>
+									</thead>
+									<tbody>  
+										<tr>
+											<td></td>
+											<td></td>										
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><div class="input-field col m6 s12">
+												<select  name="noOfLeaveDays" autocomplete="off">
+													<option value=""></option>
+													<option value="casual">Casual</option>                                          
+													<option value="vaca">Vaca</option>
+													<option value="duty">Duty</option>
+													<option value="Others">Others</option>
+												</select>
+											</div></td> 
+											<td><div class="input-field col m6 s12">
+												<select  name="leaveTakenInCurrentYear" autocomplete="off">
+													<option value=""></option>
+													<option value="casual">Casual</option>                                          
+													<option value="vaca">Vaca</option>
+													<option value="duty">Duty</option>
+													<option value="Others">Others</option>
+												</select>
+											</div></td>
+											<td><div class="input-field col m6 s12">
+												<select  name="firstAppointmentDate" autocomplete="off">
+													<option value=""></option>
+													<option value="date">Date</option>                                          
+													<option value="month">Month</option>
+													<option value="year">Year</option>													
+												</select>
+											</div></td>
+											<td><div class="input-field col m6 s12">
+												<select  name="commencingLeaveDate" autocomplete="off">
+													<option value=""></option>
+													<option value="date">Date</option>                                          
+													<option value="month">Month</option>
+													<option value="year">Year</option>													
+												</select>
+											</div></td>
+											<td><div class="input-field col m6 s12">
+												<select  name="ResumingDutiesDate" autocomplete="off">
+													<option value=""></option>
+													<option value="date">Date</option>                                          
+													<option value="month">Month</option>
+													<option value="year">Year</option>													
+												</select>
+											</div></td>
+											<td><div class="input-field col s12">
+												<textarea id="textarea1" name="reason" class="materialize-textarea" name="reason" length="500"></textarea>                                          
+											</div></td>
+											<td></td>
+											<td></td>
+											<td><a href="" class="waves-effect waves-light btn blue m-b-xs"  > View Details</a></td>
+										</tr>
+									</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>             
+        </main>
+		<!-- Javascripts -->
+        <script src="../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+        <script src="../assets/plugins/materialize/js/materialize.min.js"></script>
+        <script src="../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+        <script src="../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+        <script src="../assets/js/alpha.min.js"></script>
+        <script src="../assets/js/pages/form_elements.js"></script>
+    </body>
+</html>
