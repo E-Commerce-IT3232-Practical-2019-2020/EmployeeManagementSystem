@@ -1,6 +1,8 @@
 package lk.ac.vau.elms.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -11,6 +13,7 @@ import javax.persistence.OneToOne;
 public class ApplyLeave {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String lid;
 	private String designation;
 	private int no_of_dates_leave_applied;
