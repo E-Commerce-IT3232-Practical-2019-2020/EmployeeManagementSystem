@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 public class Admin extends SuperClass {
 
 	private String Password;
-	private int MobileNUm;
+	private int MobileNum;
 	
 	@OneToMany(mappedBy="admins")
 	private List <Department> dept;
@@ -24,10 +24,10 @@ public class Admin extends SuperClass {
 	
 	public Admin() {}
 
-	public Admin(String password, int mobileNUm, List<Department> dept, List<Permission> permissions, Login logins) {
+	public Admin(String password, int mobileNum, List<Department> dept, List<Permission> permissions, Login logins) {
 		super();
 		Password = password;
-		MobileNUm = mobileNUm;
+		MobileNum = mobileNum;
 		this.dept = dept;
 		this.permissions = permissions;
 		this.logins = logins;
@@ -41,12 +41,12 @@ public class Admin extends SuperClass {
 		Password = password;
 	}
 
-	public int getMobileNUm() {
-		return MobileNUm;
+	public int getMobileNum() {
+		return MobileNum;
 	}
 
-	public void setMobileNUm(int mobileNUm) {
-		MobileNUm = mobileNUm;
+	public void setMobileNum(int mobileNum) {
+		MobileNum = mobileNum;
 	}
 
 	public List<Department> getDept() {
