@@ -1,5 +1,7 @@
 package lk.ac.vau.elms.Model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class ApplyLeave {
@@ -18,9 +22,10 @@ public class ApplyLeave {
 	private String designation;
 	private int no_of_dates_leave_applied;
 	private int leave_taken_in_current_yr;
-	private String data_of_first_appoinment;
-	private String date_of_commencing_leave;
-	private String date_of_resuming_duties;
+	@Temporal(TemporalType.DATE)
+	private Date data_of_first_appoinment;
+	private Date date_of_commencing_leave;
+	private Date date_of_resuming_duties;
 	private String reason;
 	private String address_when_on_leave;
 	
