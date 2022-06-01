@@ -23,7 +23,7 @@ public class ApplyLeave {
 	private int no_of_dates_leave_applied;
 	private int leave_taken_in_current_yr;
 	@Temporal(TemporalType.DATE)
-	private Date data_of_first_appoinment;
+	private Date data_of_first_appointment;
 	private Date date_of_commencing_leave;
 	private Date date_of_resuming_duties;
 	private String reason;
@@ -35,7 +35,7 @@ public class ApplyLeave {
 	
 	@OneToOne
 	@JoinTable(
-	        name="leave_permisson",
+	        name="leave_permission",
 	        joinColumns= {@JoinColumn(name="leave_id", referencedColumnName="lid")},
 	        inverseJoinColumns= {@JoinColumn(name="permission_id", referencedColumnName="pr_id")}
 	    )
