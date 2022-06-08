@@ -9,8 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Employee extends SuperClass {
-
+public class Employee extends SuperClass{
+	
 	private String mobile_num;
 	private String role;
 	private String email;
@@ -18,7 +18,7 @@ public class Employee extends SuperClass {
 	private String address;
 	
 	@ManyToOne
-	@JoinColumn(name="dept_id",referencedColumnName="dept_id",nullable=false)
+	@JoinColumn(name="dept_id",referencedColumnName="id",nullable=false)
 	private Department dept;
 	
 	@ManyToMany(mappedBy="emp")
@@ -27,9 +27,7 @@ public class Employee extends SuperClass {
 	@OneToOne
 	@JoinColumn(name="login_id",referencedColumnName="login_id",nullable=false)
 	private Login logins;
-	
-	public Employee() {}
-	
+
 	public Employee(String mobile_num, String role, String email, String password, String address, Department dept,
 			List<ApplyLeave> app_leaves, Login logins) {
 		super();
@@ -42,6 +40,8 @@ public class Employee extends SuperClass {
 		this.app_leaves = app_leaves;
 		this.logins = logins;
 	}
+	
+	public Employee() {}
 
 	public String getMobile_num() {
 		return mobile_num;
@@ -106,6 +106,5 @@ public class Employee extends SuperClass {
 	public void setLogins(Login logins) {
 		this.logins = logins;
 	}
-	
-	
+
 }

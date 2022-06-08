@@ -1,14 +1,15 @@
 package lk.ac.vau.elms.Model;
 
 import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Admin extends SuperClass {
-
+public class Admin extends SuperClass{
+	
 	private String Password;
 	private int MobileNum;
 	
@@ -71,5 +72,6 @@ public class Admin extends SuperClass {
 
 	public void setLogins(Login logins) {
 		this.logins = logins;
-	}	
+	}
+	
 }
