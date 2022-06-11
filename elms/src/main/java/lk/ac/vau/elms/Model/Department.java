@@ -9,11 +9,11 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Department extends SuperClass {
-	
+
 	private String description;
 	
 	@ManyToOne
-	@JoinColumn(name="admin_id",referencedColumnName="admin_id", nullable=false)
+	@JoinColumn(name="admin_id",referencedColumnName="id", nullable=false)
 	private Admin admins;
 	
 	@OneToMany(mappedBy="dept")
@@ -51,4 +51,5 @@ public class Department extends SuperClass {
 	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
+	
 }
