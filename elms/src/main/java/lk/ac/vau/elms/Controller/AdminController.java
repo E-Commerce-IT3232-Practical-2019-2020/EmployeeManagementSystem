@@ -17,10 +17,11 @@ public class AdminController {
 	@Autowired
 	private AdminRepo repo;
 	
+	//http://localhost:8080/adm
 	@GetMapping
 	public List<Admin> getAll(){
 		return repo.findAll();
-		//http://localhost:8080/adm
+		
 	}
 
 }

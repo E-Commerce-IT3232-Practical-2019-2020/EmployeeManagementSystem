@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import lk.ac.vau.elms.Model.Employee;
 
-public interface EmployeeRepo extends JpaRepository<Employee,Integer>{
+public interface EmployeeRepo extends JpaRepository<Employee,String>{
 	@Query("select e from Employee e where name like %?1%")
 	public List<Employee> searchByName(String name);
 	
