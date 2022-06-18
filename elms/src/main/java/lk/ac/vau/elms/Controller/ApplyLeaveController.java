@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import lk.ac.vau.elms.Model.ApplyLeave;
 import lk.ac.vau.elms.Repo.LeaveRepo;
 
@@ -17,10 +18,10 @@ public class ApplyLeaveController {
 	@Autowired
 	private LeaveRepo repo;
 	
+	//01-http://localhost:8080/admin
 	@GetMapping
-	//http://localhost:8080/leave
-	public List <ApplyLeave> getAll(){
+	public List<ApplyLeave> getAll(){
 		return repo.findAll();
+		
 	}
-
 }
