@@ -7,13 +7,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Department extends SuperClass {
 
 	private String description;
 	
+	@JsonBackReference
 	@ManyToOne
-	@JoinColumn(name="admin_id",referencedColumnName="id", nullable=false)
+	@JoinColumn(referencedColumnName="id")
 	private Admin admins;
 	
 	@OneToMany(mappedBy="dept")

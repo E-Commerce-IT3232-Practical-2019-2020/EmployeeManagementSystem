@@ -1,10 +1,15 @@
 package lk.ac.vau.elms.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
 
 @Entity
 public class Permission {
@@ -13,7 +18,8 @@ public class Permission {
 	private String pr_id;
 	private String status;
 	
-	@ManyToOne
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="admin_id" ,referencedColumnName="id",nullable=false)
 	private Admin admins;
 	

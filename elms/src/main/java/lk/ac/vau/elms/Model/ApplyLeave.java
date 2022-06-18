@@ -29,6 +29,7 @@ public class ApplyLeave {
 	private String reason;
 	private String address_when_on_leave;
 	
+	
 	@ManyToOne
 	@JoinColumn(name="emp_id",referencedColumnName="id",nullable=false)
 	private Employee emp;

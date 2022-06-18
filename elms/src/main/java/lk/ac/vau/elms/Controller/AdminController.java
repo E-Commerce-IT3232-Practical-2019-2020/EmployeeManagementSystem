@@ -18,16 +18,24 @@ public class AdminController {
 	@Autowired
 	private AdminRepo repo;
 	
-	//http://localhost:8080/admin
+	//01-http://localhost:8080/admin
 	@GetMapping
 	public List<Admin> getAll(){
 		return repo.findAll();
 		
 	}
 	
+	//02-http://localhost:8080/admin/aid?id=admin01
 	@GetMapping("/aid")
 	public Admin getOne(@RequestParam("id")String id) {
 		return repo.findById(id).get();
 		
 	}
+	
+	
+	@GetMapping("/name")
+	public List<Admin>getByName(@RequestParam("nm") String name){
+		return repo.searchByName(name);
+	}
+	
 }

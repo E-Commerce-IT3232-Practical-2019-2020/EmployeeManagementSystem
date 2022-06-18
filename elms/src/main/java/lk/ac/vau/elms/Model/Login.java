@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
 @Entity
 public class Login {
 	
@@ -12,6 +15,7 @@ public class Login {
 	private String username;
 	private String password;
 	
+	@JsonBackReference
 	@OneToOne(mappedBy="logins")
 	private Admin admins;
 	

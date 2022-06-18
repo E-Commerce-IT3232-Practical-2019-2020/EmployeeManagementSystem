@@ -3,9 +3,11 @@ package lk.ac.vau.elms.Model;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Admin extends SuperClass{
@@ -13,14 +15,17 @@ public class Admin extends SuperClass{
 	private String Password;
 	private int MobileNum;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="admins")
 	private List <Department> dept;
 	
-	@OneToMany(mappedBy="admins")
+	@JsonManagedReference
+	@OneToMany(fetch = FetchType.LAZY,mappedBy="admins")
 	private List <Permission> permissions;
 	
+	
 	@OneToOne
-	@JoinColumn(name="login_id",referencedColumnName="login_id",nullable=false)
+	@JsonManagedReference
 	private Login logins;
 	
 	public Admin() {}
