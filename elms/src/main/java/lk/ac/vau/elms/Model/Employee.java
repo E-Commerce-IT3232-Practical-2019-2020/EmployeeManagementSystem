@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Employee extends SuperClass{
 	
@@ -19,14 +21,17 @@ public class Employee extends SuperClass{
 	
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name="dept_id",referencedColumnName="id",nullable=false)
 	private Department dept;
 	
 	
 	@OneToMany(mappedBy="emp")
+	@JsonBackReference
 	private List <ApplyLeave> app_leaves;
 	
 	@OneToOne
+	@JsonBackReference
 	@JoinColumn(name="login_id",referencedColumnName="login_id",nullable=false)
 	private Login logins;
 

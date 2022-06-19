@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Department extends SuperClass {
@@ -19,6 +20,7 @@ public class Department extends SuperClass {
 	@JoinColumn(referencedColumnName="id")
 	private Admin admins;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="dept")
 	private List<Employee> employees;
 	
