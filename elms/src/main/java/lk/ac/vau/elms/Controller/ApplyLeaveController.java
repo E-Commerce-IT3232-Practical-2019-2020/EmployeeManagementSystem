@@ -25,3 +25,9 @@ public class ApplyLeaveController {
 		
 	}
 }
+
+@GetMapping("/aid")
+	public ApplyLeave getOne(@RequestParam("id")String id) {
+		return repo.findById(id).get();
+		
+	}
