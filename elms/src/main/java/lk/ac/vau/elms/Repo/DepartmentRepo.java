@@ -9,7 +9,7 @@ import lk.ac.vau.elms.Model.Department;
 @Repository
 public interface DepartmentRepo extends JpaRepository<Department,String>{
 	
-	@Query("select count(e) from Department d join d.employees e where d.Id = ?1")
+	@Query("select count(e) from Department d join d.employee e where d.Id = ?1")
 	public int numberOfEmp(String did);
 
 }
