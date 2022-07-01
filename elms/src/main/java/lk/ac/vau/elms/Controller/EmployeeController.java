@@ -23,7 +23,7 @@ public class EmployeeController {
 		return repo.findAll();
 	}
 	
-	//http://localhost:8080/emp/name?empname=ratha
+	//http://localhost:8080/emp/name?empname=kumar
 	@GetMapping("/name")
 	public List<Employee> getByName(@RequestParam("empname") String name){
 		return repo.searchByName(name);

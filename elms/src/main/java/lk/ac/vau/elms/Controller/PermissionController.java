@@ -26,8 +26,3 @@ public class PermissionController {
 		
 	}
 }
-@GetMapping("/aid")
-	public Permission getOne(@RequestParam("id")String id) {
-		return repo.findById(id).get();
-		
-	}

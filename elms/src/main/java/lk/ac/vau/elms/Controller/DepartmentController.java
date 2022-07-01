@@ -3,7 +3,9 @@ package lk.ac.vau.elms.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lk.ac.vau.elms.Model.Department;
@@ -20,6 +22,12 @@ public class DepartmentController {
 		return repo.findAll();
 	}
 	
-	
-
+		@GetMapping("/noe")
+		public int GetNoEmp(@RequestParam("did")String did) {
+			return repo.numberOfEmp(did);
+		}
+		
 }
+
+
+

@@ -13,8 +13,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @Entity
 public class ApplyLeave {
 	
@@ -33,7 +31,6 @@ public class ApplyLeave {
 	
 	
 	@ManyToOne
-	@JsonManagedReference
 	@JoinColumn(name="emp_id",referencedColumnName="id",nullable=false)
 	private Employee emp;
 	

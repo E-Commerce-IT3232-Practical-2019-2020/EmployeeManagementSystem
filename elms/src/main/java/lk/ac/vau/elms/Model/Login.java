@@ -5,7 +5,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
@@ -20,7 +19,6 @@ public class Login {
 	@OneToOne(mappedBy="logins")
 	private Admin admins;
 	
-	@JsonManagedReference
 	@OneToOne(mappedBy="logins")
 	private Employee emp;
 
